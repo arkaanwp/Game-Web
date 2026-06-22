@@ -13,10 +13,99 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ✦ Pop / Redirect Ad (effectivecpmnetwork) ✦ -->
+  <script src="https://pl29851237.effectivecpmnetwork.com/07/0e/b5/070eb570b5ba3cef1e95f04b0047319c.js"></script>
+  <script src="https://pl29851240.effectivecpmnetwork.com/d9/97/1b/d9971b2bc490ef0eb8213f2fb028061b.js"></script>
+
+  <style>
+    /* ── Ad wrapper helpers ── */
+    .ad-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .ad-label {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    /* Leaderboard bar (728x90 / 468x60) – below header */
+    .ad-bar {
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 8px 0;
+    }
+    /* Between-section banner */
+    .ad-section {
+      padding: 24px 0;
+      background: rgba(255,255,255,0.01);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    /* Sticky bottom mobile banner */
+    .ad-sticky-bottom {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 150;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(10,10,15,0.96);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 4px 0;
+    }
+    /* Floating side skyscrapers */
+    .ad-side {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+    }
+    .ad-side-left  { left: 4px; }
+    .ad-side-right { right: 4px; }
+    /* Hide side ads on small screens to avoid overlap */
+    @media(max-width: 1380px) { .ad-side { display: none; } }
+    /* Hide sticky bottom on desktop if not needed */
+    @media(min-width: 769px)  { .ad-sticky-bottom { display: none; } }
+    /* Give page bottom padding so sticky bar doesn't cover content on mobile */
+    @media(max-width: 768px)  { body { padding-bottom: 60px; } }
+  </style>
 </head>
 <body>
   <!-- Animated BG Particles -->
   <div class="bg-particles" id="bgParticles"></div>
+
+  <!-- ══════════════════════════════════════
+       AD #1 — Leaderboard 728x90 (Desktop)
+                / 468x60 (Mid)
+       Below header, max-width centered
+  ══════════════════════════════════════ -->
+  <div class="ad-bar" id="adBarTop">
+    <p class="ad-label">Advertisement</p>
+    <!-- 728x90 Leaderboard -->
+    <div class="ad-wrap" id="adLeaderboard">
+      <script>
+        atOptions = {
+          'key'    : '18db47c1353a0b6083830ee8bb807b21',
+          'format' : 'iframe',
+          'height' : 90,
+          'width'  : 728,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/18db47c1353a0b6083830ee8bb807b21/invoke.js"></script>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="header">
@@ -69,6 +158,25 @@
       </div>
     </div>
   </section>
+
+  <!-- ══════════════════════════════════════
+       AD #2 — 468x60 Banner (below hero)
+  ══════════════════════════════════════ -->
+  <div class="ad-section">
+    <p class="ad-label">Advertisement</p>
+    <div class="ad-wrap">
+      <script>
+        atOptions = {
+          'key'    : 'cf86086d1336cefabe8c151be44d5f57',
+          'format' : 'iframe',
+          'height' : 60,
+          'width'  : 468,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/cf86086d1336cefabe8c151be44d5f57/invoke.js"></script>
+    </div>
+  </div>
 
   <!-- Games Grid -->
   <section class="games-section" id="games">
@@ -165,7 +273,40 @@
       </article>
 
     </div>
+
+    <!-- ══════════════════════════════════════
+         AD #3 — 300x250 Medium Rectangle
+         Below game grid, centered
+    ══════════════════════════════════════ -->
+    <div style="margin-top:40px;">
+      <p class="ad-label">Advertisement</p>
+      <div class="ad-wrap">
+        <script>
+          atOptions = {
+            'key'    : 'd0f25c945eaab0e977534158ecd29cfc',
+            'format' : 'iframe',
+            'height' : 250,
+            'width'  : 300,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/d0f25c945eaab0e977534158ecd29cfc/invoke.js"></script>
+      </div>
+    </div>
+
   </section>
+
+  <!-- ══════════════════════════════════════
+       AD #4 — Native Ad (effectivecpmnetwork)
+       Between Games & About
+  ══════════════════════════════════════ -->
+  <div class="ad-section">
+    <p class="ad-label">Sponsored</p>
+    <div class="ad-wrap" style="max-width:800px;margin:0 auto;padding:0 24px;">
+      <script async="async" data-cfasync="false" src="https://pl29851238.effectivecpmnetwork.com/aaa5feb584390523f0d625eb31f708ab/invoke.js"></script>
+      <div id="container-aaa5feb584390523f0d625eb31f708ab"></div>
+    </div>
+  </div>
 
   <!-- About Section -->
   <section class="about-section" id="about">
@@ -207,7 +348,7 @@
           <div class="feat-icon">🆓</div>
           <div>
             <h4>100% Gratis</h4>
-            <p>Semua game gratis selamanya, tanpa iklan mengganggu.</p>
+            <p>Semua game gratis, bisa dimainkan kapan saja.</p>
           </div>
         </div>
       </div>
@@ -234,7 +375,77 @@
       </div>
       <p class="footer-copy">© 2026 GameZone. Made with ❤️ for fun.</p>
     </div>
+
+    <!-- ══════════════════════════════════════
+         AD #5 — 728x90 Leaderboard (footer)
+    ══════════════════════════════════════ -->
+    <div style="margin-top:24px;">
+      <p class="ad-label">Advertisement</p>
+      <div class="ad-wrap">
+        <script>
+          atOptions = {
+            'key'    : '18db47c1353a0b6083830ee8bb807b21',
+            'format' : 'iframe',
+            'height' : 90,
+            'width'  : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/18db47c1353a0b6083830ee8bb807b21/invoke.js"></script>
+      </div>
+    </div>
   </footer>
+
+  <!-- ══════════════════════════════════════
+       AD #6 — Floating Side Skyscrapers
+       Left: 160x300 | Right: 160x600
+       Only visible on very wide screens (>1380px)
+  ══════════════════════════════════════ -->
+  <div class="ad-side ad-side-left" id="adSideLeft">
+    <p class="ad-label">Ad</p>
+    <script>
+      atOptions = {
+        'key'    : '23bb954dc4f8874b6ae6af51eb1935ba',
+        'format' : 'iframe',
+        'height' : 300,
+        'width'  : 160,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/23bb954dc4f8874b6ae6af51eb1935ba/invoke.js"></script>
+  </div>
+
+  <div class="ad-side ad-side-right" id="adSideRight">
+    <p class="ad-label">Ad</p>
+    <script>
+      atOptions = {
+        'key'    : '8609347b819972c52b9a0c284f42fa3e',
+        'format' : 'iframe',
+        'height' : 600,
+        'width'  : 160,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/8609347b819972c52b9a0c284f42fa3e/invoke.js"></script>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       AD #7 — Sticky Bottom Mobile 320x50
+       Only visible on mobile (≤768px)
+  ══════════════════════════════════════ -->
+  <div class="ad-sticky-bottom" id="adStickyBottom">
+    <p class="ad-label">Advertisement</p>
+    <script>
+      atOptions = {
+        'key'    : '9687c7a335af0dc3cc88d89c5cb14d94',
+        'format' : 'iframe',
+        'height' : 50,
+        'width'  : 320,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/9687c7a335af0dc3cc88d89c5cb14d94/invoke.js"></script>
+  </div>
 
   <!-- Game Modal Overlay -->
   <div class="game-modal" id="gameModal" role="dialog" aria-modal="true" aria-label="Game Window">
