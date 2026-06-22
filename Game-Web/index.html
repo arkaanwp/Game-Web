@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GameZone - Portal game browser gratis terbaik. Main Snake, Tetris, dan 2048 sekarang!" />
+  <meta name="keywords" content="game online, game gratis, snake game, tetris, 2048, browser game" />
+  <meta property="og:title" content="GameZone - Portal Game Browser" />
+  <meta property="og:description" content="Mainkan 3 game seru langsung di browser kamu, gratis!" />
+  <meta property="og:type" content="website" />
+  <title>GameZone — Play Now, No Download</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Animated BG Particles -->
+  <div class="bg-particles" id="bgParticles"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo" id="logoBtn">
+        <div class="logo-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="10" fill="url(#logoGrad)"/>
+            <path d="M10 18h4m-2-2v4M22 17h4M18 22l2-2 2 2" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="24" cy="14" r="2" fill="#fff"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7C3AED"/>
+                <stop offset="1" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Game<span class="logo-accent">Zone</span></span>
+      </div>
+      <nav class="nav">
+        <a href="#games" class="nav-link active" id="navGames">Games</a>
+        <a href="#about" class="nav-link" id="navAbout">About</a>
+      </nav>
+      <div class="header-badge">🎮 Free &amp; No Download</div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">✨ Play Instantly in Your Browser</div>
+      <h1 class="hero-title">
+        Your Favorite <br/>
+        <span class="gradient-text">Games</span> Are Here
+      </h1>
+      <p class="hero-subtitle">3 game klasik terbaik. Tanpa download, tanpa login. Langsung main!</p>
+      <a href="#games" class="hero-btn" id="heroPlayBtn">
+        <span>Main Sekarang</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-cards-float">
+        <div class="float-card fc1">🐍</div>
+        <div class="float-card fc2">🧱</div>
+        <div class="float-card fc3">🔢</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Games Grid -->
+  <section class="games-section" id="games">
+    <div class="section-header">
+      <h2 class="section-title">Pilih Game Kamu</h2>
+      <p class="section-sub">Klik untuk mulai bermain — langsung di halaman ini!</p>
+    </div>
+    <div class="games-grid">
+
+      <!-- Snake -->
+      <article class="game-card" id="cardSnake" onclick="openGame('snake')" tabindex="0" role="button" aria-label="Main Snake Game">
+        <div class="card-glow glow-green"></div>
+        <div class="card-thumb snake-thumb">
+          <div class="thumb-icon">🐍</div>
+          <div class="pixel-grid" id="snakePreview"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-arcade">Arcade</span>
+            <span class="tag tag-classic">Classic</span>
+          </div>
+          <h3 class="card-title">Snake</h3>
+          <p class="card-desc">Kendalikan ular, makan makanan, dan hindari menabrak dinding. Seberapa panjang kamu bisa tumbuh?</p>
+          <div class="card-meta">
+            <span class="meta-item">⭐ 4.9</span>
+            <span class="meta-item">🕹️ Keyboard / Touch</span>
+          </div>
+          <button class="card-btn" id="playSnakeBtn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l8 5-8 5V3z" fill="currentColor"/></svg>
+            Play Now
+          </button>
+        </div>
+      </article>
+
+      <!-- Tetris -->
+      <article class="game-card featured" id="cardTetris" onclick="openGame('tetris')" tabindex="0" role="button" aria-label="Main Tetris Game">
+        <div class="featured-badge">🔥 Populer</div>
+        <div class="card-glow glow-purple"></div>
+        <div class="card-thumb tetris-thumb">
+          <div class="thumb-icon">🧱</div>
+          <div class="tetris-preview" id="tetrisPreview"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-puzzle">Puzzle</span>
+            <span class="tag tag-classic">Classic</span>
+          </div>
+          <h3 class="card-title">Tetris</h3>
+          <p class="card-desc">Susun balok-balok jatuh menjadi baris sempurna. Game puzzle legendaris yang selalu seru!</p>
+          <div class="card-meta">
+            <span class="meta-item">⭐ 5.0</span>
+            <span class="meta-item">🕹️ Keyboard</span>
+          </div>
+          <button class="card-btn" id="playTetrisBtn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l8 5-8 5V3z" fill="currentColor"/></svg>
+            Play Now
+          </button>
+        </div>
+      </article>
+
+      <!-- 2048 -->
+      <article class="game-card" id="card2048" onclick="openGame('2048')" tabindex="0" role="button" aria-label="Main 2048 Game">
+        <div class="card-glow glow-orange"></div>
+        <div class="card-thumb game2048-thumb">
+          <div class="thumb-icon">🔢</div>
+          <div class="preview-2048" id="preview2048">
+            <div class="p2048-tile t2">2</div>
+            <div class="p2048-tile t4">4</div>
+            <div class="p2048-tile t8">8</div>
+            <div class="p2048-tile t16">16</div>
+            <div class="p2048-tile t32">32</div>
+            <div class="p2048-tile t64">64</div>
+            <div class="p2048-tile t128">128</div>
+            <div class="p2048-tile t256">256</div>
+            <div class="p2048-tile t512">512</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-puzzle">Puzzle</span>
+            <span class="tag tag-strategy">Strategy</span>
+          </div>
+          <h3 class="card-title">2048</h3>
+          <p class="card-desc">Gabungkan angka-angka untuk mencapai 2048. Mudah dipelajari, susah dikuasai!</p>
+          <div class="card-meta">
+            <span class="meta-item">⭐ 4.8</span>
+            <span class="meta-item">🕹️ Swipe / Arrow</span>
+          </div>
+          <button class="card-btn" id="play2048Btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l8 5-8 5V3z" fill="currentColor"/></svg>
+            Play Now
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2 class="about-title">Tentang <span class="gradient-text">GameZone</span></h2>
+        <p class="about-desc">GameZone adalah portal game browser gratis yang bisa kamu mainkan kapan saja dan di mana saja. Tidak perlu download, tidak perlu login. Cukup buka browser dan langsung main!</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Games</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Download</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Fun</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-features">
+        <div class="feature-item">
+          <div class="feat-icon">⚡</div>
+          <div>
+            <h4>Instant Play</h4>
+            <p>Buka langsung, main langsung. Tanpa loading lama.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-icon">📱</div>
+          <div>
+            <h4>Mobile Friendly</h4>
+            <p>Responsif di semua ukuran layar — HP, tablet, PC.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-icon">🆓</div>
+          <div>
+            <h4>100% Gratis</h4>
+            <p>Semua game gratis selamanya, tanpa iklan mengganggu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="10" fill="url(#logoGrad2)"/>
+            <path d="M10 18h4m-2-2v4M22 17h4M18 22l2-2 2 2" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="24" cy="14" r="2" fill="#fff"/>
+            <defs>
+              <linearGradient id="logoGrad2" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7C3AED"/><stop offset="1" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Game<span class="logo-accent">Zone</span></span>
+      </div>
+      <p class="footer-copy">© 2026 GameZone. Made with ❤️ for fun.</p>
+    </div>
+  </footer>
+
+  <!-- Game Modal Overlay -->
+  <div class="game-modal" id="gameModal" role="dialog" aria-modal="true" aria-label="Game Window">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <span class="modal-icon" id="modalIcon"></span>
+        <span class="modal-title" id="modalTitle"></span>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn-restart" id="modalRestart" title="Restart Game">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+          Restart
+        </button>
+        <button class="modal-btn-close" id="modalClose" title="Close Game" aria-label="Close Game">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/snake.js"></script>
+  <script src="js/tetris.js"></script>
+  <script src="js/game2048.js"></script>
+</body>
+</html>
