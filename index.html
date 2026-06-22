@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GameZone - Portal game browser gratis terbaik. Main Snake, Tetris, dan 2048 sekarang!" />
+  <meta name="keywords" content="game online, game gratis, snake game, tetris, 2048, browser game" />
+  <meta property="og:title" content="GameZone - Portal Game Browser" />
+  <meta property="og:description" content="Mainkan 3 game seru langsung di browser kamu, gratis!" />
+  <meta property="og:type" content="website" />
+  <title>GameZone — Play Now, No Download</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ✦ Pop / Redirect Ad (effectivecpmnetwork) ✦ -->
+  <script src="https://pl29851237.effectivecpmnetwork.com/07/0e/b5/070eb570b5ba3cef1e95f04b0047319c.js"></script>
+  <script src="https://pl29851240.effectivecpmnetwork.com/d9/97/1b/d9971b2bc490ef0eb8213f2fb028061b.js"></script>
+
+  <style>
+    /* ── Ad wrapper helpers ── */
+    .ad-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+    }
+    .ad-label {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    /* Leaderboard bar (728x90 / 468x60) – below header */
+    .ad-bar {
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 8px 0;
+    }
+    /* Between-section banner */
+    .ad-section {
+      padding: 24px 0;
+      background: rgba(255,255,255,0.01);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    /* Sticky bottom mobile banner */
+    .ad-sticky-bottom {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 150;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(10,10,15,0.96);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 4px 0;
+    }
+    /* Floating side skyscrapers */
+    .ad-side {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+    }
+    .ad-side-left  { left: 4px; }
+    .ad-side-right { right: 4px; }
+    /* Hide side ads on small screens to avoid overlap */
+    @media(max-width: 1380px) { .ad-side { display: none; } }
+    /* Hide sticky bottom on desktop if not needed */
+    @media(min-width: 769px)  { .ad-sticky-bottom { display: none; } }
+    /* Give page bottom padding so sticky bar doesn't cover content on mobile */
+    @media(max-width: 768px)  { body { padding-bottom: 60px; } }
+  </style>
+</head>
+<body>
+  <!-- Animated BG Particles -->
+  <div class="bg-particles" id="bgParticles"></div>
+
+  <!-- ══════════════════════════════════════
+       AD #1 — Leaderboard 728x90 (Desktop)
+                / 468x60 (Mid)
+       Below header, max-width centered
+  ══════════════════════════════════════ -->
+  <div class="ad-bar" id="adBarTop">
+    <p class="ad-label">Advertisement</p>
+    <!-- 728x90 Leaderboard -->
+    <div class="ad-wrap" id="adLeaderboard">
+      <script>
+        atOptions = {
+          'key'    : '18db47c1353a0b6083830ee8bb807b21',
+          'format' : 'iframe',
+          'height' : 90,
+          'width'  : 728,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/18db47c1353a0b6083830ee8bb807b21/invoke.js"></script>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo" id="logoBtn">
+        <div class="logo-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="10" fill="url(#logoGrad)"/>
+            <path d="M10 18h4m-2-2v4M22 17h4M18 22l2-2 2 2" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="24" cy="14" r="2" fill="#fff"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7C3AED"/>
+                <stop offset="1" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Game<span class="logo-accent">Zone</span></span>
+      </div>
+      <nav class="nav">
+        <a href="#games" class="nav-link active" id="navGames">Games</a>
+        <a href="#about" class="nav-link" id="navAbout">About</a>
+      </nav>
+      <div class="header-badge">🎮 Free &amp; No Download</div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">✨ Play Instantly in Your Browser</div>
+      <h1 class="hero-title">
+        Your Favorite <br/>
+        <span class="gradient-text">Games</span> Are Here
+      </h1>
+      <p class="hero-subtitle">3 game klasik terbaik. Tanpa download, tanpa login. Langsung main!</p>
+      <a href="#games" class="hero-btn" id="heroPlayBtn">
+        <span>Main Sekarang</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-cards-float">
+        <div class="float-card fc1">🐍</div>
+        <div class="float-card fc2">🧱</div>
+        <div class="float-card fc3">🔢</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       AD #2 — 468x60 Banner (below hero)
+  ══════════════════════════════════════ -->
+  <div class="ad-section">
+    <p class="ad-label">Advertisement</p>
+    <div class="ad-wrap">
+      <script>
+        atOptions = {
+          'key'    : 'cf86086d1336cefabe8c151be44d5f57',
+          'format' : 'iframe',
+          'height' : 60,
+          'width'  : 468,
+          'params' : {}
+        };
+      </script>
+      <script src="https://www.highperformanceformat.com/cf86086d1336cefabe8c151be44d5f57/invoke.js"></script>
+    </div>
+  </div>
+
+  <!-- Games Grid -->
+  <section class="games-section" id="games">
+    <div class="section-header">
+      <h2 class="section-title">Pilih Game Kamu</h2>
+      <p class="section-sub">Klik untuk mulai bermain — langsung di halaman ini!</p>
+    </div>
+    <div class="games-grid">
+
+      <!-- Snake -->
+      <article class="game-card" id="cardSnake" onclick="openGame('snake')" tabindex="0" role="button" aria-label="Main Snake Game">
+        <div class="card-glow glow-green"></div>
+        <div class="card-thumb snake-thumb">
+          <div class="thumb-icon">🐍</div>
+          <div class="pixel-grid" id="snakePreview"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-arcade">Arcade</span>
+            <span class="tag tag-classic">Classic</span>
+          </div>
+          <h3 class="card-title">Snake</h3>
+          <p class="card-desc">Kendalikan ular, makan makanan, dan hindari menabrak dinding. Seberapa panjang kamu bisa tumbuh?</p>
+          <div class="card-meta">
+            <span class="meta-item">⭐ 4.9</span>
+            <span class="meta-item">🕹️ Keyboard / Touch</span>
+          </div>
+          <button class="card-btn" id="playSnakeBtn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l8 5-8 5V3z" fill="currentColor"/></svg>
+            Play Now
+          </button>
+        </div>
+      </article>
+
+      <!-- Tetris -->
+      <article class="game-card featured" id="cardTetris" onclick="openGame('tetris')" tabindex="0" role="button" aria-label="Main Tetris Game">
+        <div class="featured-badge">🔥 Populer</div>
+        <div class="card-glow glow-purple"></div>
+        <div class="card-thumb tetris-thumb">
+          <div class="thumb-icon">🧱</div>
+          <div class="tetris-preview" id="tetrisPreview"></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-puzzle">Puzzle</span>
+            <span class="tag tag-classic">Classic</span>
+          </div>
+          <h3 class="card-title">Tetris</h3>
+          <p class="card-desc">Susun balok-balok jatuh menjadi baris sempurna. Game puzzle legendaris yang selalu seru!</p>
+          <div class="card-meta">
+            <span class="meta-item">⭐ 5.0</span>
+            <span class="meta-item">🕹️ Keyboard</span>
+          </div>
+          <button class="card-btn" id="playTetrisBtn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l8 5-8 5V3z" fill="currentColor"/></svg>
+            Play Now
+          </button>
+        </div>
+      </article>
+
+      <!-- 2048 -->
+      <article class="game-card" id="card2048" onclick="openGame('2048')" tabindex="0" role="button" aria-label="Main 2048 Game">
+        <div class="card-glow glow-orange"></div>
+        <div class="card-thumb game2048-thumb">
+          <div class="thumb-icon">🔢</div>
+          <div class="preview-2048" id="preview2048">
+            <div class="p2048-tile t2">2</div>
+            <div class="p2048-tile t4">4</div>
+            <div class="p2048-tile t8">8</div>
+            <div class="p2048-tile t16">16</div>
+            <div class="p2048-tile t32">32</div>
+            <div class="p2048-tile t64">64</div>
+            <div class="p2048-tile t128">128</div>
+            <div class="p2048-tile t256">256</div>
+            <div class="p2048-tile t512">512</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag tag-puzzle">Puzzle</span>
+            <span class="tag tag-strategy">Strategy</span>
+          </div>
+          <h3 class="card-title">2048</h3>
+          <p class="card-desc">Gabungkan angka-angka untuk mencapai 2048. Mudah dipelajari, susah dikuasai!</p>
+          <div class="card-meta">
+            <span class="meta-item">⭐ 4.8</span>
+            <span class="meta-item">🕹️ Swipe / Arrow</span>
+          </div>
+          <button class="card-btn" id="play2048Btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3l8 5-8 5V3z" fill="currentColor"/></svg>
+            Play Now
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ══════════════════════════════════════
+         AD #3 — 300x250 Medium Rectangle
+         Below game grid, centered
+    ══════════════════════════════════════ -->
+    <div style="margin-top:40px;">
+      <p class="ad-label">Advertisement</p>
+      <div class="ad-wrap">
+        <script>
+          atOptions = {
+            'key'    : 'd0f25c945eaab0e977534158ecd29cfc',
+            'format' : 'iframe',
+            'height' : 250,
+            'width'  : 300,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/d0f25c945eaab0e977534158ecd29cfc/invoke.js"></script>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════
+       AD #4 — Native Ad (effectivecpmnetwork)
+       Between Games & About
+  ══════════════════════════════════════ -->
+  <div class="ad-section">
+    <p class="ad-label">Sponsored</p>
+    <div class="ad-wrap" style="max-width:800px;margin:0 auto;padding:0 24px;">
+      <script async="async" data-cfasync="false" src="https://pl29851238.effectivecpmnetwork.com/aaa5feb584390523f0d625eb31f708ab/invoke.js"></script>
+      <div id="container-aaa5feb584390523f0d625eb31f708ab"></div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <h2 class="about-title">Tentang <span class="gradient-text">GameZone</span></h2>
+        <p class="about-desc">GameZone adalah portal game browser gratis yang bisa kamu mainkan kapan saja dan di mana saja. Tidak perlu download, tidak perlu login. Cukup buka browser dan langsung main!</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Games</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Download</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Fun</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-features">
+        <div class="feature-item">
+          <div class="feat-icon">⚡</div>
+          <div>
+            <h4>Instant Play</h4>
+            <p>Buka langsung, main langsung. Tanpa loading lama.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-icon">📱</div>
+          <div>
+            <h4>Mobile Friendly</h4>
+            <p>Responsif di semua ukuran layar — HP, tablet, PC.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-icon">🆓</div>
+          <div>
+            <h4>100% Gratis</h4>
+            <p>Semua game gratis, bisa dimainkan kapan saja.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="10" fill="url(#logoGrad2)"/>
+            <path d="M10 18h4m-2-2v4M22 17h4M18 22l2-2 2 2" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="24" cy="14" r="2" fill="#fff"/>
+            <defs>
+              <linearGradient id="logoGrad2" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7C3AED"/><stop offset="1" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">Game<span class="logo-accent">Zone</span></span>
+      </div>
+      <p class="footer-copy">© 2026 GameZone. Made with ❤️ for fun.</p>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         AD #5 — 728x90 Leaderboard (footer)
+    ══════════════════════════════════════ -->
+    <div style="margin-top:24px;">
+      <p class="ad-label">Advertisement</p>
+      <div class="ad-wrap">
+        <script>
+          atOptions = {
+            'key'    : '18db47c1353a0b6083830ee8bb807b21',
+            'format' : 'iframe',
+            'height' : 90,
+            'width'  : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/18db47c1353a0b6083830ee8bb807b21/invoke.js"></script>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════
+       AD #6 — Floating Side Skyscrapers
+       Left: 160x300 | Right: 160x600
+       Only visible on very wide screens (>1380px)
+  ══════════════════════════════════════ -->
+  <div class="ad-side ad-side-left" id="adSideLeft">
+    <p class="ad-label">Ad</p>
+    <script>
+      atOptions = {
+        'key'    : '23bb954dc4f8874b6ae6af51eb1935ba',
+        'format' : 'iframe',
+        'height' : 300,
+        'width'  : 160,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/23bb954dc4f8874b6ae6af51eb1935ba/invoke.js"></script>
+  </div>
+
+  <div class="ad-side ad-side-right" id="adSideRight">
+    <p class="ad-label">Ad</p>
+    <script>
+      atOptions = {
+        'key'    : '8609347b819972c52b9a0c284f42fa3e',
+        'format' : 'iframe',
+        'height' : 600,
+        'width'  : 160,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/8609347b819972c52b9a0c284f42fa3e/invoke.js"></script>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       AD #7 — Sticky Bottom Mobile 320x50
+       Only visible on mobile (≤768px)
+  ══════════════════════════════════════ -->
+  <div class="ad-sticky-bottom" id="adStickyBottom">
+    <p class="ad-label">Advertisement</p>
+    <script>
+      atOptions = {
+        'key'    : '9687c7a335af0dc3cc88d89c5cb14d94',
+        'format' : 'iframe',
+        'height' : 50,
+        'width'  : 320,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/9687c7a335af0dc3cc88d89c5cb14d94/invoke.js"></script>
+  </div>
+
+  <!-- Game Modal Overlay -->
+  <div class="game-modal" id="gameModal" role="dialog" aria-modal="true" aria-label="Game Window">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <span class="modal-icon" id="modalIcon"></span>
+        <span class="modal-title" id="modalTitle"></span>
+      </div>
+      <div class="modal-actions">
+        <button class="modal-btn-restart" id="modalRestart" title="Restart Game">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+          Restart
+        </button>
+        <button class="modal-btn-close" id="modalClose" title="Close Game" aria-label="Close Game">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/snake.js"></script>
+  <script src="js/tetris.js"></script>
+  <script src="js/game2048.js"></script>
+</body>
+</html>
